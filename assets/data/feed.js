@@ -13,7 +13,7 @@ export default [
         latitude: 28.3915637,
         longitude: -16.6291304,
       },
-    },
+    }, 
     {
       id: '1',
       image: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/2.jpg',

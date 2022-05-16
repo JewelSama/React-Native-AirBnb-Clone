@@ -3,36 +3,37 @@ import React from 'react';
 import styles from './styles';
 
 
-const Post = () => {
+const Post = (props) => {
+
+    const post = props.post;
+
   return (
     <View style={styles.container}>
         {/* Image */}
         <Image style={styles.image}
-            source={require('../../../assets/images/wallpaper.jpg')}
+            source={{uri: post.image}}
         />
 
         {/* bed & Bedroom */}
-    <Text style={styles.bedrooms}>! bed 1 bedroom</Text>
+    <Text style={styles.bedrooms}>{post.bed} bed {post.bedroom} bedroom</Text>
 
 
 
         {/* Type & description */}
     <Text style={styles.description} numberOfLines={2}>
-        lipsum pueriyo bla bals fun dat dsknoid
-    lipsum pueriyo bla bals fun dat dsknoid
-    lipsum pueriyo bla bals fun dat dsknoid lipsum pueriyo bla b
-    als fun dat dsknoid</Text>
+        {post.type}. {post.title}
+       </Text>
 
 
         {/* Old price & new price */}
         <Text style={styles.prices}>
-            <Text style={styles.oldPrice}>$36</Text>
-            <Text style={styles.newPrice}>  $30</Text>
+            <Text style={styles.oldPrice}>{post.oldPrice}</Text>
+            <Text style={styles.newPrice}>  ${post.newPrice}</Text>
             / night
         </Text>
     
         {/* Total Price */}
-        <Text style={styles.totalPrice}>$230 total</Text> 
+        <Text style={styles.totalPrice}>${post.totalPrice} total</Text> 
     </View>
   )
 }
